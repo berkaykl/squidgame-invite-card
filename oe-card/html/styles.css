@@ -1,0 +1,161 @@
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.card-container {
+  -webkit-perspective: 500px;
+  perspective: 500px;
+}
+.card-container:hover {
+  cursor: default;
+}
+
+.flipped{
+  -webkit-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+}
+
+.card {
+  -webkit-transition: -webkit-transform 0.7s;
+  transition: transform 0.7s;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.front, .back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.back {
+  -webkit-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+}
+
+/*Custom Styles*/
+.cards-container{
+ display: -webkit-flex;
+ display: -webkit-box;
+ display: -ms-flexbox;
+ display: flex;
+ -webkit-flex-direction: row;
+ -webkit-box-orient: horizontal;
+ -webkit-box-direction: normal;
+ -ms-flex-direction: row;
+ flex-direction: row;
+ -webkit-box-pack: center;
+ -webkit-justify-content: center;
+ -ms-flex-pack: center;
+ justify-content: center;
+ position: relative;
+ top: 50%;
+ transform: translateY(-50%);
+ width: 100%;
+}
+
+.card {
+  width: 55vh;
+  height: 27vh;
+  background-image: url(./img/background.png);
+  background-size: cover;
+}
+
+.front {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.front div {
+  width: auto;
+  height:auto;
+}
+
+.front div img {
+  width: 8vh;
+  height: 8vh;
+  margin-right: 1.7vh;
+}
+
+.front div img:last-child {
+  margin-right: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+.back p {
+  position: absolute;
+  color: rgba(0, 0, 0, 0.877);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.75vh;
+  bottom: -0.2%;
+  letter-spacing: 0.5px;
+  font-family: 'Special Elite', cursive;
+}
+
+.back #message {
+  position: absolute;
+  color: rgba(0, 0, 0, 0.877);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.75vh;
+  bottom: 13%;
+  outline: none;
+  border: none;
+  background: none;
+  text-align: center;
+  width: 80%;
+  font-family: 'Special Elite', cursive;
+  user-select: none;
+}
+
+.back #message:hover {
+  cursor: default;
+}
+
+.back #gameNum {
+  position: absolute;
+  color: rgba(0, 0, 0, 0.877);
+  left: 50%;
+  top: 35%;
+  transform: translateX(-50%);
+  font-size: 4vh;
+  outline: none;
+  border: none;
+  background: none;
+  text-align: center;
+  width: 50%;
+  font-family: 'Special Elite', cursive;
+  letter-spacing: 3px;
+  user-select: none;
+  opacity: 0.85;
+}
+
+.back #gameNum:hover {
+  cursor: default;
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  color: white;
+}
+
+#main-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
